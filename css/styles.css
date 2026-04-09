@@ -21,7 +21,7 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 :root {
-  
+
   /* COLORES PRIMARIOS */
   --color-primary-900: #0a1628;
   --color-primary-800: #0f2140;
@@ -140,15 +140,30 @@ body {
   margin-left: var(--header-width);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
   color: var(--color-neutral-800);
 }
 
-h1 { font-size: var(--font-size-4xl); }
-h2 { font-size: var(--font-size-3xl); margin-bottom: var(--spacing-sm); }
-h3 { font-size: var(--font-size-lg); margin-bottom: var(--spacing-xs); }
+h1 {
+  font-size: var(--font-size-4xl);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-sm);
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-xs);
+}
 
 p {
   margin-bottom: var(--spacing-md);
@@ -171,7 +186,8 @@ img {
   display: block;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -238,7 +254,7 @@ main {
   padding-top: 0;
 }
 
-main > section {
+main>section {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -249,7 +265,7 @@ main > section {
    7. HERO SECTION
    ═══════════════════════════════════════════════════════════════════════════ */
 
-main > section::before {
+main>section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -262,7 +278,7 @@ main > section::before {
   z-index: 0;
 }
 
-main > section::after {
+main>section::after {
   content: '';
   position: absolute;
   top: -100px;
@@ -275,7 +291,7 @@ main > section::after {
   pointer-events: none;
 }
 
-main > section > h1 {
+main>section>h1 {
   font-size: var(--font-size-4xl);
   font-weight: 800;
   color: var(--color-white);
@@ -287,7 +303,7 @@ main > section > h1 {
   animation: fadeInUp 0.8s ease-out;
 }
 
-main > section > p:first-of-type {
+main>section>p:first-of-type {
   font-size: var(--font-size-md);
   color: rgba(255, 255, 255, 0.85);
   text-align: center;
@@ -530,7 +546,85 @@ footer p {
 
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   12. ANIMACIONES
+   12. CONTACTO (ESTILOS ESPECÍFICOS)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.contacto-lista-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+  align-items: stretch;
+  /* Esto hace que tengan la misma altura */
+  justify-content: flex-start;
+  margin-top: var(--spacing-lg);
+}
+
+.contacto-tarjeta {
+  background-color: var(--color-white);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  /* Sombra suave de la imagen */
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 100%;
+  max-width: 330px;
+}
+
+.contacto-tarjeta .tarjeta-cabecera {
+  color: var(--color-primary-800);
+  font-size: var(--font-size-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.contacto-tarjeta .tarjeta-cabecera strong {
+  font-weight: var(--font-weight-bold);
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.contacto-tarjeta .texto-normal {
+  display: block;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-neutral-600);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  margin-top: var(--spacing-xs);
+}
+
+.contacto-tarjeta .icono {
+  filter: grayscale(100%);
+  opacity: 0.8;
+  margin-right: 4px;
+}
+
+.contacto-tarjeta .tarjeta-enlace {
+  display: block;
+  background-color: var(--color-accent-400);
+  /* Color dorado / amarillo similar a la imagen */
+  color: var(--color-primary-900);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  text-align: center;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.05em;
+  transition: all var(--transition-fast);
+  margin-top: auto;
+  /* Empuja el botón al final de la tarjeta y las iguala a todas */
+}
+
+.contacto-tarjeta .tarjeta-enlace:hover {
+  background-color: var(--color-accent-500);
+  transform: translateY(-2px);
+  color: var(--color-primary-900);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   13. ANIMACIONES
    ═══════════════════════════════════════════════════════════════════════════ */
 
 @keyframes fadeInUp {
@@ -538,6 +632,7 @@ footer p {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -548,6 +643,7 @@ footer p {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -558,6 +654,7 @@ footer p {
     opacity: 0;
     transform: translateX(-50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -574,18 +671,23 @@ footer p {
     --header-width: 100px;
   }
 
-  h1 { font-size: var(--font-size-3xl); }
-  h2 { font-size: var(--font-size-2xl); }
-  
+  h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-2xl);
+  }
+
   body {
     margin-left: var(--header-width);
   }
 
-  main > section > h1 {
+  main>section>h1 {
     margin-top: var(--spacing-3xl);
     padding-top: var(--spacing-xl);
   }
-  
+
   article {
     padding: var(--spacing-3xl) var(--padding-container);
   }
@@ -602,14 +704,16 @@ footer p {
     --padding-container: 1rem;
     --header-width: 100%;
   }
-  
+
   body {
     margin-left: 0;
     margin-top: 70px;
   }
 
-  h1 { font-size: var(--font-size-2xl); }
-  
+  h1 {
+    font-size: var(--font-size-2xl);
+  }
+
   header {
     width: 100%;
     height: auto;
@@ -637,33 +741,33 @@ footer p {
     font-size: 0.75rem;
   }
 
-  main > section > h1 {
+  main>section>h1 {
     margin-top: var(--spacing-2xl);
     padding-top: var(--spacing-lg);
   }
-  
-  main > section > p:first-of-type {
+
+  main>section>p:first-of-type {
     font-size: var(--font-size-base);
   }
-  
+
   article {
     padding: var(--spacing-2xl) var(--padding-container);
     margin-bottom: var(--spacing-2xl);
   }
-  
+
   article:nth-of-type(2)::before,
   article:nth-of-type(3)::before {
     display: none;
   }
-  
+
   figure {
     margin: var(--spacing-xl) 0;
   }
-  
+
   article:nth-of-type(1) ul {
     grid-template-columns: 1fr;
   }
-  
+
   a.btn,
   article a {
     width: 100%;
