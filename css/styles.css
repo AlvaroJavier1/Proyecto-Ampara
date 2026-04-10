@@ -661,6 +661,24 @@ footer p {
   }
 }
 
+/* Clases para el JavaScript de Animación al Hacer Scroll */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(40px); /* El elemento empieza invisible y más abajo */
+  transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0); /* Sube a su posición original */
+}
+
+/* Efecto escalonado (para que unos elementos aparezcan antes de otros) */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+
 
 /* ═══════════════════════════════════════════════════════════════════════════
    13. RESPONSIVIDAD - TABLET (máx 992px)
