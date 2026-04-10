@@ -300,7 +300,6 @@ main>section>h1 {
   padding-top: var(--spacing-2xl);
   position: relative;
   z-index: 2;
-  animation: fadeInUp 0.8s ease-out;
 }
 
 main>section>p:first-of-type {
@@ -313,7 +312,6 @@ main>section>p:first-of-type {
   line-height: var(--line-height-relaxed);
   position: relative;
   z-index: 2;
-  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 
@@ -327,7 +325,6 @@ figure {
   border-radius: var(--border-radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-  animation: fadeInUp 0.8s ease-out 0.4s both;
   transition: transform var(--transition-base);
 }
 
@@ -664,8 +661,8 @@ footer p {
 /* Clases para el JavaScript de Animación al Hacer Scroll */
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(40px); /* El elemento empieza invisible y más abajo */
-  transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+  transform: translateY(80px); /* Aumentado de 40px a 80px para que el movimiento sea más obvio */
+  transition: opacity 1s cubic-bezier(0.25, 0.8, 0.25, 1), transform 1s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transición un poco más larga y suave (ease-out) */
   will-change: opacity, transform;
 }
 
