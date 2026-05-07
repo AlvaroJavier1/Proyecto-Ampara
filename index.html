@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Bienvenido a nuestro sitio de seguros. Protegemos lo que más amas con planes personalizados y atención humana. Descubre tu tranquilidad hoy.">
+        content="Bienvenido a Ampara Seguros. Protegemos lo que más amas con planes personalizados y atención humana. Descubre tu tranquilidad hoy.">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://amparaseguros.com/">
+    <meta property="og:title" content="Ampara Seguros — Protegemos tu futuro">
+    <meta property="og:description" content="Seguros de vida, auto y hogar con un enfoque moderno y humano.">
+    <meta property="og:image" content="./assets/img/seguros.jpg">
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Seguros</title>
+    <title>Ampara Seguros — Protegemos lo que más amas</title>
+
 </head>
 
 <body>
     <header>
-        <nav>
+        <button id="menu-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="main-nav">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="quienes-somos.html">Quienes Somos</a></li>
@@ -23,6 +35,7 @@
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
+
     </header>
     <main>
         <section>
@@ -35,7 +48,8 @@
             </p>
 
             <figure class="reveal-on-scroll">
-                <img src="./assets/img/seguros.jpg" alt="seguros">
+                <img src="./assets/img/seguros.jpg" alt="Representación de protección integral: manos cubriendo una familia y un hogar">
+
                 <figcaption>
                     Tu vida, tu familia y tus bienes bajo un mismo resguardo. Esta imagen refleja nuestra filosofía de
                     trabajo: ser las manos que protegen lo que tanto te ha costado construir. Ofrecemos un paraguas de

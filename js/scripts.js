@@ -9,10 +9,7 @@ function iniciarAnimaciones() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-            } else {
-                // Removemos la clase cuando el elemento sale de la pantalla
-                // para que la animación se repita al volver a bajar
-                entry.target.classList.remove('is-visible');
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -23,9 +20,31 @@ function iniciarAnimaciones() {
     });
 }
 
-// Ejecutar inmediatamente si el HTML ya cargó, de lo contrario esperar al evento.
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', iniciarAnimaciones);
-} else {
-    iniciarAnimaciones();
+function iniciarMenuMovil() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+    
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+    }
 }
+
+// Ejecutar cuando el HTML esté cargado
+document.addEventListener('DOMContentLoaded', () => {
+    iniciarAnimaciones();
+    iniciarMenuMovil();
+});
+
+
