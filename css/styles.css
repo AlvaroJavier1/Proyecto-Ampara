@@ -828,6 +828,7 @@ footer p {
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: var(--spacing-md) var(--spacing-lg);
+    overflow: visible; /* Permitir que el nav absoluto se muestre fuera del header en móvil */
   }
 
   header nav ul {
