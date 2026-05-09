@@ -23,12 +23,26 @@ function iniciarAnimaciones() {
 function iniciarMenuMovil() {
     const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.getElementById('main-nav');
+    const menuOverlay = document.getElementById('menu-overlay');
     
     if (menuToggle && mainNav) {
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            mainNav.classList.toggle('active');
-        });
+        const toggleMenu = () => {
+            const isOpen = mainNav.classList.toggle('active');
+            menuToggle.classList.toggle('active', isOpen);
+            if (menuOverlay) {
+                menuOverlay.classList.toggle('active', isOpen);
+            }
+        };
+
+        menuToggle.addEventListener('click', toggleMenu);
+
+        if (menuOverlay) {
+            menuOverlay.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+                menuOverlay.classList.remove('active');
+            });
+        }
 
         // Cerrar menú al hacer clic en un enlace
         const navLinks = mainNav.querySelectorAll('a');
@@ -36,6 +50,9 @@ function iniciarMenuMovil() {
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('active');
                 mainNav.classList.remove('active');
+                if (menuOverlay) {
+                    menuOverlay.classList.remove('active');
+                }
             });
         });
     }

@@ -12,7 +12,12 @@
 
 <body>
   <header>
-    <nav>
+    <button id="menu-toggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="main-nav">
       <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="quienes-somos.html">Quienes Somos</a></li>
@@ -24,6 +29,7 @@
       </ul>
     </nav>
   </header>
+  <div id="menu-overlay" aria-hidden="true"></div>
   <main>
     <section>
       <h1 class="reveal-on-scroll">Tu camino, siempre protegido</h1>
