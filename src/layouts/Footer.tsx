@@ -4,7 +4,7 @@ export function Footer(){
     return (
         <footer className="bg-primary text-white pt-16 pb-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grip-cols-3 gap-10 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
                     <div>
                         <div className="flex items-center gap-2 mb-4">
                             <span className="text-2xl">🛡️</span>
@@ -43,11 +43,9 @@ export function Footer(){
                             <li>📍 San Salvador, El Salvador</li>
                         </ul>
                     </div>
-
                     <div className="border-t border-white/10 pt-6 text-center text-xs text-white/40">
                         © {new Date().getFullYear()} Ampara Seguros. Todos los derechos reservados.
                     </div>
-
                 </div>
             </div>
         </footer>
