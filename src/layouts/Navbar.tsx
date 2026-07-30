@@ -10,7 +10,7 @@ export function Navbar(){
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 20)
         window.addEventListener('scroll', onScroll)
-        return () => window.addEventListener('scroll', onScroll)
+        return () => window.removeEventListener('scroll', onScroll)
     }, [])
 
     return (
@@ -51,7 +51,7 @@ export function Navbar(){
                     aria-label="Abrir menú"
                 >
                     <div className="space-y-1.5 w-6">
-                        <span className={`block h-0.5 bg-current transition-transform &{menuOpen ? 'rotate-45 translate-y-2' : ''}`}/>
+                        <span className={`block h-0.5 bg-current transition-transform ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}/>
                         <span className={`block h-0.5 bg-current transition-opacity ${menuOpen ? 'opacity-0' : ''}`}/>
                         <span className={`block h-0.5 bg-current transition-transform ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}/>
                     </div>
