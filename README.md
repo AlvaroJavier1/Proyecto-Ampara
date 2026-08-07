@@ -1,75 +1,25 @@
-# React + TypeScript + Vite
+# 🛡️ Ampara - Tu Protección Integral
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Ampara** es una plataforma web institucional para una empresa de seguros comprometida con la tranquilidad de las personas. Bajo el lema de brindar protección en todos los aspectos de la vida, Ampara ofrece soluciones personalizadas en **Seguros de Auto, Vida y Daños Materiales**.
 
-Currently, two official plugins are available:
+El sitio está diseñado con un enfoque en la confianza, la claridad y la rapidez, permitiendo a los usuarios conocer sus opciones de cobertura de manera sencilla.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📸 Vista Previa
+*(`![Vista Previa de Ampara](./preview.png)`)*
 
-## React Compiler
+## 🚀 Tecnologías Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Ampara ha sido desarrollado utilizando un stack moderno para garantizar un rendimiento óptimo y una excelente experiencia de usuario:
 
-## Expanding the ESLint configuration
+- **[React](https://reactjs.org/)** + **[TypeScript](https://www.typescriptlang.org/)** - Base sólida y tipada para una aplicación escalable y libre de errores.
+- **[Vite](https://vitejs.dev/)** - Herramienta de compilación ultrarrápida para un flujo de desarrollo ágil.
+- **[Tailwind CSS](https://tailwindcss.com/)** - Sistema de diseño utilitario que permite una interfaz moderna, responsiva y fácil de mantener.
+- **[React Router DOM](https://reactrouter.com/)** - Gestión de navegación fluida entre las distintas secciones (Auto, Vida, Daños, Nosotros, etc.).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📂 Estructura clave del proyecto
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+El proyecto está organizado para ser escalable y fácil de mantener:
+- `src/components` → Componentes reutilizables (Navbar, PlanCard, etc.).
+- `src/pages` → Vistas principales (Home, Auto, Vida, Danos, etc.).
+- `src/layouts` → Estructuras de diseño generales.
+- `src/data` → Datos estáticos e información de los planes.
