@@ -33,4 +33,5 @@ export interface ContactFormData {
     phone: string;
     service: string;
     message: string;
+    plan?: string;
 }
