@@ -2,14 +2,18 @@ import { useState } from "react"
 import { ScrollReveal } from "@/components/ui/ScrollReveal"
 import { SectionTitle } from "@/components/ui/SectionTitle"
 import type { ContactFormData } from "@/types"
+import { useLocation } from "react-router-dom"
 
 export function Contacto() {
+    const location = useLocation()
+
     const [form, setFrom] = useState<ContactFormData>({
         name: '',
         email: '',
         phone: '',
         service: '',
-        message: ''
+        message: '',
+        plan: location.state?.plan || '',
     })
 
     const [sent, setSent] = useState(false)
@@ -116,9 +120,26 @@ export function Contacto() {
                                     className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition"
                                 >
                                     <option value="">Seleccioná una opción</option>
-                                    <option value="">Seguro de Vida</option>
-                                    <option value="">Seguro de Daños</option>
-                                    <option value="">Seguro de Auto</option>
+                                    <option value="vida">Seguro de Vida</option>
+                                    <option value="danos">Seguro de Daños</option>
+                                    <option value="auto">Seguro de Auto</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    Plan de interés
+                                </label>
+                                <select
+                                    name="plan"
+                                    value={form.plan}
+                                    onChange={handleChange}
+                                    className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition"
+                                >
+                                    <option value="">Seleccioná una opción</option>
+                                    <option value="basico">Básico</option>
+                                    <option value="familiar">Familiar</option>
+                                    <option value="premium">Premium</option>
                                 </select>
                             </div>
 
