@@ -5,7 +5,7 @@
 El sitio está diseñado con un enfoque en la confianza, la claridad y la rapidez, permitiendo a los usuarios conocer sus opciones de cobertura de manera sencilla.
 
 ## 📸 Vista Previa
-*(`![Vista Previa de Ampara](./preview.png)`)*
+![Vista Previa de Ampara](./preview.png)
 
 ## 🚀 Tecnologías Utilizadas
 
