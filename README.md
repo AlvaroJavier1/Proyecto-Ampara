@@ -16,6 +16,15 @@ Ampara ha sido desarrollado utilizando un stack moderno para garantizar un rendi
 - **[Tailwind CSS](https://tailwindcss.com/)** - Sistema de diseño utilitario que permite una interfaz moderna, responsiva y fácil de mantener.
 - **[React Router DOM](https://reactrouter.com/)** - Gestión de navegación fluida entre las distintas secciones (Auto, Vida, Daños, Nosotros, etc.).
 
+## 📩 Integración con API REST (Formulario de Contacto)
+
+El sitio web cuenta con un formulario de contacto funcional que se conecta a una **API REST externa** para el envío de mensajes. El formulario está diseñado para evitar el envío de datos incorrectos.
+
+**Características de validación:**
+- **Validación nativa de HTML5:** Los campos de correo electrónico y los campos obligatorios (`required`) son validados automáticamente por el navegador antes de permitir el envío de la petición a la API.
+- **Envío de datos:** Si las validaciones son exitosas, los datos se serializan en formato JSON y se realiza la petición `POST` al servidor configurado.
+- **Próximas mejoras previstas:** Se implementará una validación personalizada con mensajes de error visuales más amigables (sin usar las alertas nativas del navegador) y un estado de carga mientras se envía la  petición.
+
 ## 📂 Estructura clave del proyecto
 
 El proyecto está organizado para ser escalable y fácil de mantener:
